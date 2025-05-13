@@ -3,15 +3,17 @@ import { AuthProvider } from './components/AuthContext';
 import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import './global.css';
+
 
 const App = () => (
   <AuthProvider>
     <Router>
       <Routes>
-        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/" element={<Navigate to="/register" />} />
+        <Route path="*" element={<Login />} />
       </Routes>
     </Router>
   </AuthProvider>

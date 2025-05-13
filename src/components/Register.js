@@ -1,12 +1,14 @@
 // Register.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-
+ const navigate = useNavigate(); 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -16,6 +18,7 @@ const Register = () => {
       });
       console.log('Registration successful:', response.data);
       setMessage('Registration successful!');
+      navigate('/login');
     } catch (error) {
       console.error('Registration error:', error);
       if (error.response) {
@@ -28,8 +31,8 @@ const Register = () => {
     }
   };
 
-  return (
-    <div>
+ return (
+    <div className="container">
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <input

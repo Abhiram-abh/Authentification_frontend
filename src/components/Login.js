@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate,Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate(); // Initialize the navigate function
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,6 +17,7 @@ const Login = () => {
       });
       console.log('Login successful:', response.data);
       setMessage('Login successful!');
+      navigate('/dashboard'); // Redirect to the dashboard
     } catch (error) {
       console.error('Login error:', error);
       if (error.response) {
@@ -27,8 +30,8 @@ const Login = () => {
     }
   };
 
-  return (
-    <div>
+    return (
+    <div className="container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -48,6 +51,9 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       {message && <p>{message}</p>}
+      <p>
+        New user? <Link to="/register">Register here</Link>
+      </p>
     </div>
   );
 };
