@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,3 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # Authentification
 >>>>>>> 171418423d296041922da49db8287ea176d8d2ed
+=======
+# Authentification_frontend
+>>>>>>> df231c1ab7a52d0d9cdacecbb7ecc9138264b6a1
