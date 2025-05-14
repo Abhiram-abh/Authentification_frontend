@@ -4,8 +4,8 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 
 // Import custom components
-import StatusIndicator from '../components/StatusIndicator';
-import TopLeftAnimation from '../components/TopLeftAnimation';
+import StatusIndicator from './StatusIndicator';
+import TopLeftAnimation from './TopLeftAnimation';
 import CursorGlow from './Cursor';
 const Dashboard = () => {
   const [message, setMessage] = useState('');
