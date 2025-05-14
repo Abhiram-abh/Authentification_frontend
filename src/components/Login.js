@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate,Link } from 'react-router-dom';
+import axiosInstance from '../axiosInstance'; // adjust the path as necessary
+
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -10,8 +12,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:10000/api/login', {
+     try {
+      const response = await axiosInstance.post('/api/login', {
         email,
         password,
       });
